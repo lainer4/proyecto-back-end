@@ -1,6 +1,4 @@
-/*
-  Creación de una función personalizada para jQuery que detecta cuando se detiene el scroll en la página
-*/
+
 $.fn.scrollEnd = function(callback, timeout) {
   $(this).scroll(function(){
     var $this = $(this);
@@ -10,9 +8,7 @@ $.fn.scrollEnd = function(callback, timeout) {
     $this.data('scrollTimeout', setTimeout(callback,timeout));
   });
 };
-/*
-  Función que inicializa el elemento Slider
-*/
+
 
 function inicializarSlider(){
   $("#rangoPrecio").ionRangeSlider({
@@ -25,9 +21,8 @@ function inicializarSlider(){
     prefix: "$"
   });
 }
-/*
-  Función que reproduce el video de fondo al hacer scroll, y deteiene la reproducción al detener el scroll
-*/
+
+
 function playVideoOnScroll(){
   var ultimoScroll = 0,
       intervalRewind;
@@ -38,7 +33,7 @@ function playVideoOnScroll(){
       if (scrollActual > ultimoScroll){
        video.play();
      } else {
-        //this.rewind(1.0, video, intervalRewind);
+      
         video.play();
      }
      ultimoScroll = scrollActual;
@@ -49,11 +44,8 @@ function playVideoOnScroll(){
 }
 
 inicializarSlider();
-//playVideoOnScroll();
 
-/*
-Funciones de tipo Controlador para la interacción con el back-end
-*/
+
 function AjaxReq(urlReq, dataSubmit, controlView="wraperInmuebles", load=true, callback){
     callback = callback || function(){};
     $.ajax({

@@ -18,7 +18,8 @@ try {
       $matchCiudad =  ($matchCiudad=="" || (!empty($filtroCiudad) && $json->Ciudad == $filtroCiudad));
       $matchTipo = ($matchTipo=="" || (!empty($filtroTipo) && ($json->Tipo == $filtroTipo)));
     }
-    //Sí Aplica filtro y no es coincidente continua el ciclo sin imprimir un elemento;
+   
+    
     if($filtroAply && !($matchCiudad && $matchTipo && $matchPrecio)){
       continue;
     }
